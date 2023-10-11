@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:59:02 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:59:04 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int		i;
-	char	lett;
+	int	i;
 
-	lett = 'a';
 	i = 0;
-	while (lett < 123)
+	while (i < length)
 	{
-		ft_putchar(lett);
-		lett++;
+		f(tab[i]);
+		i++;
 	}
 }

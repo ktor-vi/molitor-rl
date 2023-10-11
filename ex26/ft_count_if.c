@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:59:10 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:59:12 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int	ft_count_if(char **tab, int (*f)(char *))
 {
-	int		i;
-	char	lett;
+	int	count;
+	int	i;
 
-	lett = 'a';
 	i = 0;
-	while (lett < 123)
+	count = 0;
+	while (tab[i] != 0)
 	{
-		ft_putchar(lett);
-		lett++;
+		if (f(tab[i]) == 1)
+			count++;
+		i++;
 	}
+	return (count);
 }

@@ -6,11 +6,11 @@
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:46:49 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/09 15:49:19 by vphilipp         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:24:19 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
@@ -21,7 +21,7 @@ void	ft_print_numbers(void)
 	i = 0;
 	while (numb < 58)
 	{
-		write(1, &numb, 1);
+		ft_putchar(numb);
 		numb++;
 	}
 }

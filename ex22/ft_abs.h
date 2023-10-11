@@ -1,27 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:58:28 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:58:30 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
-{
-	int		i;
-	char	lett;
-
-	lett = 'a';
-	i = 0;
-	while (lett < 123)
-	{
-		ft_putchar(lett);
-		lett++;
-	}
-}
+#define ABS(x) ((x) * (((x) >> (31)) | 1))

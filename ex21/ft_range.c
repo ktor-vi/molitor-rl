@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:58:14 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:58:15 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_print_alphabet(void)
+int	*ft_range(int min, int max)
 {
-	int		i;
-	char	lett;
+	int	*range;
+	int	i;
 
-	lett = 'a';
-	i = 0;
-	while (lett < 123)
+	if (min >= max)
+		return (NULL);
+	else
 	{
-		ft_putchar(lett);
-		lett++;
+		range = malloc((max - min) * sizeof(int));
+		i = 0;
+		while (min < max)
+		{
+			range[i] = min;
+			i++;
+			min++;
+		}
+		return (range);
 	}
 }

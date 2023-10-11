@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:58:03 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:58:05 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_print_alphabet(void)
+int	ft_strlen(char *str)
 {
-	int		i;
-	char	lett;
+	int	i;
 
-	lett = 'a';
 	i = 0;
-	while (lett < 123)
-	{
-		ft_putchar(lett);
-		lett++;
-	}
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dup;
+	int		i;
+
+	i = -1;
+	dup = malloc(ft_strlen(src) + 1);
+	while (++i < ft_strlen(src))
+		dup[i] = src[i];
+	dup[i] = '\0';
+	return (dup);
 }

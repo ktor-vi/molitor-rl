@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vphilipp <vphilipp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:27:41 by vphilipp          #+#    #+#             */
-/*   Updated: 2023/10/10 19:24:12 by vphilipp         ###   ########.fr       */
+/*   Created: 2023/10/10 15:53:29 by vphilipp          #+#    #+#             */
+/*   Updated: 2023/10/10 15:53:31 by vphilipp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	char	lett;
+	int	i;
 
-	lett = 'a';
 	i = 0;
-	while (lett < 123)
+	while (s1[i] == s2[i])
 	{
-		ft_putchar(lett);
-		lett++;
+		if (s1[i] == '\0')
+			return (0);
+		i++;
 	}
+	return (s1[i] - s2[i]);
 }
